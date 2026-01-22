@@ -7,10 +7,10 @@
 
 /* ==================== VARIABLES ==================== */
 :root {
-  --primary: #6134b6;
-  --secondary: #d9ff51;
+  --primary: #fff1d6;
+  --secondary: #aa5454;
   --tertiary: #ffffff;
-  --accent: #006eff;
+  --accent: #bd8d34;
   --dark: #000000;
 }
 
@@ -74,9 +74,10 @@ body {
 }
 
 .profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%);
 }
 
 /* ==================== NAME SECTION ==================== */
@@ -133,4 +134,112 @@ body {
   box-shadow: -1px 1px 0 var(--dark);
   filter: drop-shadow(-1px 1px 0 var(--dark));
   transform: translate(-2px, 2px);
+}
+
+/* ==================== ABOUT ME ==================== */
+.about-box {
+  width: 17.5em;
+  margin: 3.3em auto;
+  background-color: var(--primary);
+  border: 3px solid var(--dark);
+  padding: 1.65em;
+  position: relative;
+  filter: drop-shadow(-6px 6px 0 var(--dark));
+  transition: all 0.4s ease;
+}
+
+.about-box:hover {
+  filter: drop-shadow(-2px 2px 0 var(--dark));
+  transform: translate(-4px, 4px);
+}
+
+.about-box::before,
+.about-box::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-color: var(--primary);
+  border: 3px solid var(--dark);
+  z-index: -1;
+}
+
+.about-box::before {
+  top: 0.55em;
+  left: 0.55em;
+}
+
+.about-box::after {
+  top: 1.1em;
+  left: 1.1em;
+  z-index: -2;
+}
+
+.about-title {
+  font-size: 1.32em;
+  font-weight: 700;
+  margin-bottom: 1.1em;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 0.95em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==================== PROJECTS ==================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2em;
+  margin: 3.3em auto;
+  max-width: 22em;
+}
+
+.project-card {
+  background-color: var(--primary);
+  border: 3px solid var(--dark);
+  box-shadow: -8px 8px 0 -3px var(--dark);
+  padding: 1.1em;
+  text-decoration: none;
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  transition: all 0.4s ease;
+  position: relative;
+  filter: drop-shadow(-8px 8px 0 var(--dark));
+}
+
+.project-icon {
+  width: 100%;
+  height: 7em;
+  border: 2px solid var(--dark);
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-img {
+  width: 45%;
+  height: 45%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-title {
+  font-size: 0.99em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.project-tag {
+  font-size: 0.825em;
+  text-align: center;
+  opacity: 0.8; 
 }
