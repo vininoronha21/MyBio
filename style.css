@@ -1,0 +1,30 @@
+/* ==================== RESET ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================== GENERAL ==================== */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: white;
+}
+
+.container {
+  max-width: 473px;
+  margin: 0 auto;
+  padding: 2.2em 1.1em;
+  position: relative;
+}
+
+/* ==================== PROFILE SECTION ==================== */
+.profile-section {
+  width: 17em;
+  height: 24em;
+  margin: 3.3em auto;
+  position: relative
+}
+
+
+
