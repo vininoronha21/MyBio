@@ -78,3 +78,59 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+/* ==================== NAME SECTION ==================== */
+ .name-section {
+  margin: 3.3em auto;
+  width: fit-content;
+  position: relative;
+ }
+
+ .info-box {
+  background-color: var(--secondary);
+  border: 3px solid var(--dark);
+  padding: 1.1em 1.65em;
+  position: relative;
+  filter: drop-shadow(-6px 6px 0 var(--dark));
+  transition: all 0.4s ease;
+ }
+
+ .info-box:hover {
+  filter: drop-shadow(-2px 2px 0 var(--dark));
+  transform: translate(-4px, 4px); 
+ }
+
+ .info-box h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--dark);
+ }
+
+/* ==================== SKILLS ==================== */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9em;
+  justify-content: center;
+  margin: 2.2em auto;
+  max-width: 22em;
+}
+
+.skill-pill {
+  background-color: var(--accent);
+  border: 2px solid var(--dark);
+  padding: 0.55em 1.1em;
+  border-radius: 2em;
+  font-size: 0.99em;
+  font-weight: 600;
+  color: var(--dark);
+  box-shadow: -3px 3px 0 var(--dark);
+  transition: all 0.3s ease;
+  filter: drop-shadow(-3px 3px 0 var(--dark));
+}
+
+.skill-pill:hover {
+  box-shadow: -1px 1px 0 var(--dark);
+  filter: drop-shadow(-1px 1px 0 var(--dark));
+  transform: translate(-2px, 2px);
+}
