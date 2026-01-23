@@ -99,6 +99,22 @@ function openModal(projectId) {
   document.body.style.overflow = 'hidden';
 }
 
+// Event listeners para os cards de projeto
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+    const projectId() = card.getAttribute('data-project');
+    openModal(projectId);
+  });
+});
+
+// Event listeners para fechar o modal
+modalClose.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    closeModal();
+  }
+});
+
 /**
  * Fecha o modal e restaura o scroll da página
  */
