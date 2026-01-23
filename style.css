@@ -294,3 +294,26 @@ body {
   fill: var(--dark);
 }
 
+/* ==================== CONTACT ==================== */
+.contact-info {
+  margin: 1.65em auto;
+  width: fit-content;
+  position: relative;
+}
+
+.contact-box {
+  background-color: var(--accent);
+  border: 3px solid var(--dark);
+  padding: 0.88em 1.65em;
+  filter: drop-shadow(-5px 5px 0 var(--dark));
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: var(--dark);
+  display: block; 
+}
+
+.contact-box h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
