@@ -45,6 +45,11 @@ body {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.profile-box:hover {
+  box-shadow: -4px 4px 0 -3px var(--dark);
+  transform: translate(-7px, 7px);
+}
+
 .profile-header {
   width: 100%;
   height: 2em;
@@ -78,6 +83,63 @@ body {
   height: 100%;
   object-fit: cover;
   filter: grayscale(20%);
+}
+
+/* ==================== DECORATIVE ELEMENTS ==================== */
+.star {
+  position: absolute;
+  width: 3.3em;
+  height: 3.3em;
+  animation: rotate-star 6s linear infinite; 
+}
+
+.star-1 {
+  top: -1.5em;
+  right: -2em;
+}
+
+.star-2 {
+  bottom: 2em;
+  left: -2em;
+}
+
+@keyframes rotate-star {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 2.6em;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  animation: sparkle-float 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  top: 5em;
+  left: -2em;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: 33%;
+  right: 2em;
+  width: 2.5em;
+  animation-delay: 1.5s;
+}
+
+@keyframes sparkle-float {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(8deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
 }
 
 /* ==================== NAME SECTION ==================== */
@@ -212,6 +274,12 @@ body {
   filter: drop-shadow(-8px 8px 0 var(--dark));
 }
 
+.project-card:hover {
+  box-shadow: -3px 3px 0 -3px var(--dark);
+  filter: drop-shadow(-3px 3px 0 var(--dark));
+  transform: translate(-5px, 5px);
+}
+
 .project-icon {
   width: 100%;
   height: 7em;
@@ -232,6 +300,10 @@ body {
   transition: transform 0.4s ease;
 }
 
+.project-card:hover .project-img {
+  transform: scale(1.2);
+}
+
 .project-title {
   font-size: 0.99em;
   font-weight: 600;
@@ -242,6 +314,22 @@ body {
   font-size: 0.825em;
   text-align: center;
   opacity: 0.8; 
+}
+
+.click-badge {
+  background-color: var(--secondary);
+  border: 2px solid var(--dark);
+  border-radius: 1em;
+  padding: 0.33em 0.88em;
+  font-size: 0.825em;
+  text-align: center;
+  margin-top: 0.55em;
+  font-weight: 600;
+  transition: all 0.3s ease; 
+}
+
+.project-card:hover click-badge {
+  background-color: var(--tertiary);
 }
 
 /* ==================== SECTION TITLE ==================== */
@@ -256,6 +344,22 @@ body {
   margin-right: auto;
   padding-bottom: 8px;
   cursor: default;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 6px;
+  background-color: var(--accent);
+  border: 2px solid var(--dark);
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-title::hover::after {
+  width: 100%;
 }
 
 /* ==================== SOCIAL LINKS ==================== */
@@ -273,6 +377,12 @@ body {
   filter: drop-shadow(-9px 9px 0 var(--dark));
 }
 
+.social-container:hover {
+  box-shadow: -3px 3px 0 -3px var(--dark);
+  filter: drop-shadow(-3px 3px 0 var(--dark));
+  transform: translate(-6px, 6px);  
+}
+
 .social-btn {
   width: 2.75em;
   height: 2.75em;
@@ -288,9 +398,50 @@ body {
   filter: drop-shadow(-4px 4px 0 var(--dark));
 }
 
+.social-btn:hover {
+  box-shadow: -1px 1px 0 -2px var(--dark);
+  filter: drop-shadow(-1px 1px 0 var(--dark));
+  transform: translate(-3px, 3px);
+  background-color: var(--tertiary);
+}
+
 .social-btn svg {
   width: 100%;
   height: 100%;
   fill: var(--dark);
 }
 
+/* ==================== CONTACT ==================== */
+.contact-info {
+  margin: 1.65em auto;
+  width: fit-content;
+  position: relative;
+}
+
+.contact-box {
+  background-color: var(--accent);
+  border: 3px solid var(--dark);
+  padding: 0.88em 1.65em;
+  filter: drop-shadow(-5px 5px 0 var(--dark));
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: var(--dark);
+  display: block; 
+}
+
+.contact-box:hover {
+  filter: drop-shadow(-2px 2px 0 var(--dark));
+  transform: translate(-3px, 3px);
+}
+
+.contact-box h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  text-align: center;
+  margin: 4.4em 0 2.2em;
+  font-size: 0.99em;
+}
