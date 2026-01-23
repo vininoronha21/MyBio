@@ -103,6 +103,39 @@ body {
   to { transform: rotate(360deg); }
 }
 
+.sparkle {
+  position: absolute;
+  width: 2.6em;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  animation: sparkle-float 4s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  top: 5em;
+  left: -2em;
+  animation-delay: 0s;
+}
+
+.sparkle-2 {
+  top: 33%;
+  right: 2em;
+  width: 2.5em;
+  animation-delay: 1.5s;
+}
+
+@keyframes sparkle-float {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(8deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
 
 /* ==================== NAME SECTION ==================== */
  .name-section {
