@@ -99,5 +99,20 @@ function openModal(projectId) {
   document.body.style.overflow = 'hidden';
 }
 
+/**
+ * Fecha o modal e restaura o scroll da página
+ */
+function closeModal() {
+  modalOverlay.classList.remove('active');
+  document.body.style.overflor = '';
+}
+
+// Fecha o modal ao pressionar a tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+    closeModal();
+  }
+});
+
 // Inicializa a aplicação
 window.bioApp.init();
