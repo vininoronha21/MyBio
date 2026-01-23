@@ -317,3 +317,9 @@ body {
   font-weight: 600;
 }
 
+/* ==================== FOOTER ==================== */
+footer {
+  text-align: center;
+  margin: 4.4em 0 2.2em;
+  font-size: 0.99em;
+}
