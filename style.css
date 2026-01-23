@@ -80,6 +80,30 @@ body {
   filter: grayscale(20%);
 }
 
+/* ==================== DECORATIVE ELEMENTS ==================== */
+.star {
+  position: absolute;
+  width: 3.3em;
+  height: 3.3em;
+  animation: rotate-star 6s linear infinite; 
+}
+
+.star-1 {
+  top: -1.5em;
+  right: -2em;
+}
+
+.star-2 {
+  bottom: 2em;
+  left: -2em;
+}
+
+@keyframes rotate-star {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
 /* ==================== NAME SECTION ==================== */
  .name-section {
   margin: 3.3em auto;
