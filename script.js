@@ -108,7 +108,12 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
+
+
 // Event listeners para fechar o modal
+modalClose.addEventListener('click', closeModal);
+
+// Fecha ao clicar fora do conteúdo do modal
 modalClose.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
     closeModal();
