@@ -103,7 +103,7 @@ function openModal(projectId) {
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', (e) => {
     e.preventDefault();
-    const projectId() = card.getAttribute('data-project');
+    const projectId = card.getAttribute('data-project');
     openModal(projectId);
   });
 });
