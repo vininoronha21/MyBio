@@ -188,6 +188,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// FADE SECTIONS ON SCROLL
+// Controla a opacidade e animação da seção de projetos conforme o scroll
+const projectsSection = document.getElementById('projectsSection');
+let lastScroll = 0;
+const fadeStart = 300;
+const fadeEnd = 1000; 
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  let opacity = 0;
+
+  if (currentScroll <= fadeStart) {
+    opacity = 0;
+  } else if (currentScroll >= fadeEnd) {
+     opacity = 1;
+  } else {
+    opacity = (currentScroll - fadeStart) / (fadeEnd - fadeStart);
+  }
+
+  projectsSection.style.opacity = opacity;
+  projectsSection.style.transform = `translateY(${20 * (1 - opacity)}px)`;
+
+  lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+}, { passive: true });
+
 // PERFORMANCE
 // Lazy loading de imagens para melhorar a performance
 if ('loading' in HTMLImageElement.prototype) {
