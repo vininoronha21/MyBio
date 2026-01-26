@@ -581,6 +581,24 @@ padding: 2em;
   color: var(--dark);
 }
 
+.modal-link {
+  display: inline-block;
+  background-color: var(--secondary);
+  border: 3px solid var(--dark);
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  box-shadow: -4px 4px 0 -2px var(--dark);
+  transition: all 0.3s ease;
+  margin-top: 1em;
+}
+
+.modal-link:hover {
+  box-shadow: -2px 2px 0 -2px var(--dark);
+  transform: translate(-2px, 2px);
+}
+
 .modal-tags {
   line-height: 1.6;
   margin-bottom: 1em;
@@ -594,11 +612,6 @@ padding: 2em;
   border-radius: 1em;
   font-size: 0.8em;
   font-weight: 600; 
-}
-
-.modal-link:hover {
-  box-shadow: -2px 2px 0 -2px var(--dark);
-  transform: translate(-2px, 2px); 
 }
 
 /* ==================== ICONS RESPONSIVOS NO MOBILE ==================== */
@@ -623,4 +636,60 @@ padding: 2em;
   }
 }
 
+/* ==================== CUSTOM CURSOR DUAL STYLE ==================== */
+* {
+  cursor: none !important;
+}
 
+.custom-cursor {
+  position: fixed;
+  width: 31px;
+  height: 31px;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, opacity 0.2s ease;
+}
+
+.custom-cursor svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor .cursor-arrow {
+  opacity: 1;
+}
+
+.custom-cursor .cursor-hand {
+  opacity: 0;
+}
+
+.custom-cursor.hover .cursor-arrow {
+  opacity: 0;
+}
+
+.custom-cursor.hover .cursor-hand {
+  opacity: 1;
+}
+
+.custom-cursor.click {
+  transform: scale(0.9);
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+  * {
+    cursor: auto !important;
+  }
+}
