@@ -643,8 +643,8 @@ padding: 2em;
 
 .custom-cursor {
   position: fixed;
-  width: 31px;
-  height: 31px;
+  width: 30px;
+  height: 30px;
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.15s ease-out, opacity 0.2s ease;
