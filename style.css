@@ -446,6 +446,21 @@ footer {
   font-size: 0.99em;
 }
 
+/* ==================== FADE SECTIONS ==================== */
+.fade-section {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-section.fade-up {
+  opacity: 0.85;
+  transform: translateY(10px);
+}
+
+.fade-section.fade-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ==================== MODAL ==================== */
 .modal-overlay {
   position: fixed;
