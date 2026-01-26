@@ -163,8 +163,15 @@ emailLinks.forEach(link => {
     temp.select();
     document.execCommand('copy');
     document.body.removeChild(temp);
-  })
-})
+
+   // Feedback visual de confirmação
+    const originalText = link.innerHTML;
+    link.innerHTML = '<h3>✓ Email copiado!</h3>';
+    setTimeout(() => {
+      link.innerHTML = originalText;
+    }, 2000);
+  });
+});
 
 // Inicializa a aplicação
 window.bioApp.init();
