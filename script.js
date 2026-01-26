@@ -188,5 +188,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// PERFORMANCE
+// Lazy loading de imagens para melhorar a performance
+if ('loading' in HTMLImageElement.prototype) {
+  // Navegador suporta lazy loading nativo
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  images.forEach(img => {
+    img.src = img.dataset.src;
+});
+} else {
+  // Fallback: carrega libs lazysizes
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+  document.body.appendChild(script);
+}
+
 // Inicializa a aplicação
 window.bioApp.init();
