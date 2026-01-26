@@ -48,7 +48,7 @@ body {
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.profile-box:hover {
+.profile.box:hover {
   box-shadow: -4px 4px 0 -3px var(--dark);
   transform: translate(-7px, 7px);
 }
@@ -331,7 +331,7 @@ body {
   transition: all 0.3s ease; 
 }
 
-.project-card:hover click-badge {
+.project-card:hover .click-badge {
   background-color: var(--tertiary);
 }
 
@@ -361,7 +361,7 @@ body {
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.section-title::hover::after {
+.section-title:hover::after {
   width: 100%;
 }
 
@@ -451,7 +451,9 @@ footer {
 
 /* ==================== FADE SECTIONS ==================== */
 .fade-section {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-section.fade-up {
@@ -460,6 +462,11 @@ footer {
 }
 
 .fade-section.fade-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-section.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -588,7 +595,7 @@ padding: 2em;
 }
 
 /* ==================== ICONS RESPONSIVOS NO MOBILE ==================== */
-@media (max-width: 600: px) {
+@media (max-width: 600px) {
   .project-icon {
     height: auto;
     padding: 1em;
@@ -608,4 +615,5 @@ padding: 2em;
     max-width: 12em;
   }
 }
+
 
