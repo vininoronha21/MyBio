@@ -154,6 +154,11 @@ const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
 
 emailLinks.forEach(link => {
   link.addEventListener('click', (e) => {
+    // Ignora se o link tiver data-project (é um card de modal)
+    if (link.hasAttribute('data-project')) {
+      return;
+    }
+    
     const email = link.getAttribute('href').replace('mailto:', '');
 
     // Cria elemento temporário para copiar o texto
@@ -166,7 +171,7 @@ emailLinks.forEach(link => {
 
    // Feedback visual de confirmação
     const originalText = link.innerHTML;
-    link.innerHTML = '<h3>✓ Email copiado!</h3>';
+    link.innerHTML = '<h3>✔ Email copiado!</h3>';
     setTimeout(() => {
       link.innerHTML = originalText;
     }, 2000);
