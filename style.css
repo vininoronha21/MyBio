@@ -584,3 +584,10 @@ padding: 2em;
   transform: translate(-2px, 2px); 
 }
 
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 12em;
+  }
+}
