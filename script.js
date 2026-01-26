@@ -203,5 +203,13 @@ if ('loading' in HTMLImageElement.prototype) {
   document.body.appendChild(script);
 }
 
+// EXPORT
+// Objeto global da aplicação
+window.bioApp = {
+  version: '1.0.0',
+  author: 'Vinicius Forte',
+  init: () => console.log('🚀 MyBio App iniciado!')
+};
+
 // Inicializa a aplicação
 window.bioApp.init();
