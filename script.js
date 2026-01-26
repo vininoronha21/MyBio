@@ -108,7 +108,12 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
+
+
 // Event listeners para fechar o modal
+modalClose.addEventListener('click', closeModal);
+
+// Fecha ao clicar fora do conteúdo do modal
 modalClose.addEventListener('click', (e) => {
   if (e.target === modalOverlay) {
     closeModal();
@@ -129,6 +134,82 @@ document.addEventListener('keydown', (e) => {
     closeModal();
   }
 });
+
+// ACTIVE LINK HIGHLIGHT
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('h2[class="section-title"]');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+      current = section.getAttribute('id');
+    }
+  });
+});
+
+// COPY EMAIL ON CLICK
+const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+emailLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const email = link.getAttribute('href').replace('mailto:', '');
+
+    // Cria elemento temporário para copiar o texto
+    const temp = document.createElement('textarea');
+    temp.value = email;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp);
+
+   // Feedback visual de confirmação
+    const originalText = link.innerHTML;
+    link.innerHTML = '<h3>✓ Email copiado!</h3>';
+    setTimeout(() => {
+      link.innerHTML = originalText;
+    }, 2000);
+  });
+});
+
+// SMOOTH SCROLL
+// Scroll suave para links de âncora
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// PERFORMANCE
+// Lazy loading de imagens para melhorar a performance
+if ('loading' in HTMLImageElement.prototype) {
+  // Navegador suporta lazy loading nativo
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  images.forEach(img => {
+    img.src = img.dataset.src;
+});
+} else {
+  // Fallback: carrega libs lazysizes
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+  document.body.appendChild(script);
+}
+
+// EXPORT
+// Objeto global da aplicação
+window.bioApp = {
+  version: '1.0.0',
+  author: 'Vinicius Forte',
+  init: () => console.log('🚀 MyBio App iniciado!')
+};
 
 // Inicializa a aplicação
 window.bioApp.init();
