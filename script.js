@@ -135,5 +135,19 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+// ACTIVE LINK HIGHLIGHT
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('h2[class="section-title"]');
+  let current = '';
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+      current = section.getAttribute('id');
+    }
+  });
+});
+
 // Inicializa a aplicação
 window.bioApp.init();
