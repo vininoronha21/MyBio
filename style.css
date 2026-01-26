@@ -7,10 +7,10 @@
 
 /* ==================== VARIABLES ==================== */
 :root {
-  --primary: #f2f9bf;
-  --secondary: #efaa4a;
+  --primary: #f7e9b2;
+  --secondary: #fed74a;
   --tertiary: #6fc1f3;
-  --accent: #7ca86e;
+  --accent: #6fc253;
   --dark: #000000;
 }
 
@@ -38,7 +38,7 @@ body {
   position: relative;
 }
 
-.profile.box {
+.profile-box {
   width: 100%;
   height: 100%;
   background-color: var(--primary);
@@ -145,6 +145,13 @@ body {
   }
 }
 
+.coffee {
+  bottom: 4em;
+  right: 2.5em;
+  width: 2.5em;
+  animation-delay: 2.4s;
+}
+
 /* ==================== NAME SECTION ==================== */
  .name-section {
   margin: 3.3em auto;
@@ -160,6 +167,13 @@ body {
   filter: drop-shadow(-6px 6px 0 var(--dark));
   transition: all 0.4s ease;
  }
+
+.info-box h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.5;
+}
 
  .info-box:hover {
   filter: drop-shadow(-2px 2px 0 var(--dark));
@@ -331,7 +345,7 @@ body {
   transition: all 0.3s ease; 
 }
 
-.project-card:hover click-badge {
+.project-card:hover .click-badge {
   background-color: var(--tertiary);
 }
 
@@ -361,7 +375,7 @@ body {
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.section-title::hover::after {
+.section-title:hover::after {
   width: 100%;
 }
 
@@ -447,21 +461,6 @@ footer {
   text-align: center;
   margin: 4.4em 0 2.2em;
   font-size: 0.99em;
-}
-
-/* ==================== FADE SECTIONS ==================== */
-.fade-section {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.fade-section.fade-up {
-  opacity: 0.85;
-  transform: translateY(10px);
-}
-
-.fade-section.fade-down {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ==================== MODAL ==================== */
@@ -567,6 +566,24 @@ padding: 2em;
   color: var(--dark);
 }
 
+.modal-link {
+  display: inline-block;
+  background-color: var(--secondary);
+  border: 3px solid var(--dark);
+  padding: 0.8em 1.5em;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  box-shadow: -4px 4px 0 -2px var(--dark);
+  transition: all 0.3s ease;
+  margin-top: 1em;
+}
+
+.modal-link:hover {
+  box-shadow: -2px 2px 0 -2px var(--dark);
+  transform: translate(-2px, 2px);
+}
+
 .modal-tags {
   line-height: 1.6;
   margin-bottom: 1em;
@@ -582,13 +599,8 @@ padding: 2em;
   font-weight: 600; 
 }
 
-.modal-link:hover {
-  box-shadow: -2px 2px 0 -2px var(--dark);
-  transform: translate(-2px, 2px); 
-}
-
 /* ==================== ICONS RESPONSIVOS NO MOBILE ==================== */
-@media (max-width: 600: px) {
+@media (max-width: 600px) {
   .project-icon {
     height: auto;
     padding: 1em;
@@ -609,3 +621,64 @@ padding: 2em;
   }
 }
 
+/* ==================== CUSTOM CURSOR DUAL STYLE ==================== */
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, opacity 0.2s ease;
+}
+
+.custom-cursor svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease;
+}
+
+.custom-cursor .cursor-arrow {
+  opacity: 1;
+}
+
+.custom-cursor .cursor-hand {
+  opacity: 0;
+}
+
+.custom-cursor.hover .cursor-arrow {
+  opacity: 0;
+}
+
+.custom-cursor.hover .cursor-hand {
+  opacity: 1;
+}
+
+.custom-cursor.click {
+  transform: scale(0.9);
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  
+  body {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+  * {
+    cursor: auto !important;
+  }
+}
