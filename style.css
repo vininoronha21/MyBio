@@ -456,28 +456,6 @@ footer {
   font-size: 0.99em;
 }
 
-/* ==================== FADE SECTIONS ==================== */
-.fade-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-section.fade-up {
-  opacity: 0.85;
-  transform: translateY(10px);
-}
-
-.fade-section.fade-down {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* ==================== MODAL ==================== */
 .modal-overlay {
   position: fixed;
@@ -680,6 +658,10 @@ padding: 2em;
 }
 
 @media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  
   body {
     cursor: none;
   }

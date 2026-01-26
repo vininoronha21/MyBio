@@ -54,7 +54,7 @@ const projectsData = {
     subtitle: 'Minha história e trajetória',
     content: `
             <h3>Olá! 👋</h3>
-            <p>Residente em São Paulo, com forte interesse em tecnologia desde a infância. Tive meu primeiro contato com programação aos 13 anos, editando arquivos JSON em mods de Minecraft. Após iniciar Administração, percebi que não era minha área e, aos 22 anos, decidi me aprofundar de vez na área Tech. Atualmente dedico maior parte do meu tempo em estudar e, principalmente, aplicar na prática os conceitos que aprendo.</p>
+            <p>Residente em São Paulo, com forte interesse em tecnologia desde a infância. Tive meu primeiro contato com programação aos 13 anos, editando arquivos JSON em mods de Minecraft. Após focar em Administração, percebi que não era minha área e, aos 22 anos, decidi me aprofundar de vez na área Tech. Atualmente dedico maior parte do meu tempo em estudar e, principalmente, aplicar na prática os conceitos que aprendo.</p>
             
             <h3>🎯 Objetivos:</h3>
             <p>Meu objetivo é aprender de forma sólida, criando projetos que façam sentido e tenham impacto real. Quero contribuir com a comunidade e, no futuro, ajudar pessoas que estão iniciando na área, ajudando-as a manter a motivação e não desistirem.</p>
@@ -218,31 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
       observer.observe(el);
     });
 });
-
-// FADE SECTIONS ON SCROLL
-// Controla a opacidade e animação da seção de projetos conforme o scroll
-const projectsSection = document.getElementById('projectsSection');
-let lastScroll = 0;
-const fadeStart = 300;
-const fadeEnd = 1000; 
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  let opacity = 0;
-
-  if (currentScroll <= fadeStart) {
-    opacity = 0;
-  } else if (currentScroll >= fadeEnd) {
-     opacity = 1;
-  } else {
-    opacity = (currentScroll - fadeStart) / (fadeEnd - fadeStart);
-  }
-
-  projectsSection.style.opacity = opacity;
-  projectsSection.style.transform = `translateY(${20 * (1 - opacity)}px)`;
-
-  lastScroll = currentScroll <= 0 ? 0 : currentScroll;
-}, { passive: true });
 
 // PERFORMANCE
 // Lazy loading de imagens para melhorar a performance
