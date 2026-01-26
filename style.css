@@ -145,6 +145,13 @@ body {
   }
 }
 
+.coffee {
+  bottom: 4em;
+  right: 2.5em;
+  width: 2.5em;
+  animation-delay: 2.4s;
+}
+
 /* ==================== NAME SECTION ==================== */
  .name-section {
   margin: 3.3em auto;
