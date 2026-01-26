@@ -188,6 +188,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ANIMATION ON SCROLL
+// Anima elementos quando aparecem na tela usando Intersection Observer
+const observerOptions = {
+  threshold: 0.1, // 10% do elemento visível
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Inicializa a animação dos elementos quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+  const animateElements = document.querySelectorAll(
+    '.project-card, .skill-pill, .about-box, .social-container'
+  );
+    
+  // Configura estado inicial e observa cada elemento
+    animateElements.forEach((el, index) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+      observer.observe(el);
+    });
+});
+
 // FADE SECTIONS ON SCROLL
 // Controla a opacidade e animação da seção de projetos conforme o scroll
 const projectsSection = document.getElementById('projectsSection');
