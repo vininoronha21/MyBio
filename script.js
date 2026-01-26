@@ -149,5 +149,22 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// COPY EMAIL ON CLICK
+const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+
+emailLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const email = link.getAttribute('href').replace('mailto:', '');
+
+    // Cria elemento temporário para copiar o texto
+    const temp = document.createElement('textarea');
+    temp.value = email;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp);
+  })
+})
+
 // Inicializa a aplicação
 window.bioApp.init();
