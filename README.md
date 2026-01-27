@@ -15,10 +15,7 @@ Essa é minha página de apresentação! Criei usando HTML, CSS e JavaScript.
 
 O design segue a estética **neo-brutalista/retro** - aquele estilo com bordas fortes, sombras marcantes e cores vibrantes que fazem a página ter personalidade.
 
-<p align="left">
-  <video src="assets/screenshots/video.mp4" width="100%" autoplay muted loop playsinline>
-  </video>
-</p>
+<img src="assets/screenshots/img.png" width="1000" alt="img">
 
 ## 💭 Por que uma Bio?
 
