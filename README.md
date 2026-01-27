@@ -25,7 +25,7 @@ O design segue a estética **neo-brutalista/retro** - aquele estilo com bordas f
 Decidi criar uma página que conecta todas minhas informações para quem quer entrar em contato ou me conhecer melhor. A princípio pensei em algo mais simples estilo Linktree, mas decidi me desafiar e fazer algo mais distinto.
 
 
-## ✨ O Que Tem Aqui
+## ✨ O que contém
 
 ### 🎨 Design
 
