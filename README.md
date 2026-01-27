@@ -8,7 +8,6 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
 
----
 
 ## 👋 Sobre Este Projeto
 
@@ -25,7 +24,6 @@ O design segue a estética **neo-brutalista/retro** - aquele estilo com bordas f
 
 Decidi criar uma página que conecta todas minhas informações para quem quer entrar em contato ou me conhecer melhor. A princípio pensei em algo mais simples estilo Linktree, mas decidi me desafiar e fazer algo mais distinto.
 
----
 
 ## ✨ O Que Tem Aqui
 
@@ -95,7 +93,6 @@ Design totalmente responsivo para dispositivos móveis:
   <img src="assets/screenshots/img_phone2.png" width="200">
 </p>
 
----
 
 ## 🛠️ Tecnologias
 
@@ -112,7 +109,6 @@ Decidi fazer algo mais simples, para fins de estudo em JS com foco em:
 - Como estruturar código limpo e manutenível
 - Como resolver problemas sem depender de bibliotecas
 
----
 
 ## 📁 Estrutura
 
@@ -134,7 +130,6 @@ MyBio/
 └── README.md          # Você está aqui!
 ```
 
----
 
 ## 🚀 Como executar o projeto
 
@@ -143,7 +138,6 @@ MyBio/
 
 > *(Dica: Use a extensão Live Server no VS Code para uma melhor experiência)*
 
----
 
 ## 🎯 Próximos Passos
 
@@ -152,7 +146,6 @@ MyBio/
 - [ ] Integração com GitHub API para mostrar repos automaticamente
 - [ ] Escalar para uma landing page com frameworks modernos (React por exemplo)
 
----
 
 ## 📝 Licença
 
