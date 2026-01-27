@@ -2,7 +2,7 @@
 
 > *Projeto da minha página pessoal*
 
-🌐 Acesse na Web: [link-vinicius.com](https://seu-link.com)
+🌐 Acesse na Web: [viniciusforte-mybio.vercel.app](https://viniciusforte-mybio.vercel.app/)
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -148,7 +148,6 @@ MyBio/
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
----
 
 ## 👨‍💻 Autor
 
