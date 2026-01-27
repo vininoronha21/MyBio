@@ -2,13 +2,12 @@
 
 > *Projeto da minha página pessoal*
 
-🌐 Acesse na Web: [link-vinicius.com](https://seu-link.com)
+🌐 Acesse na Web: [viniciusforte-mybio.vercel.app](https://viniciusforte-mybio.vercel.app/)
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
 
----
 
 ## 👋 Sobre Este Projeto
 
@@ -16,10 +15,7 @@ Essa é minha página de apresentação! Criei usando HTML, CSS e JavaScript.
 
 O design segue a estética **neo-brutalista/retro** - aquele estilo com bordas fortes, sombras marcantes e cores vibrantes que fazem a página ter personalidade.
 
-<p align="left">
-  <video src="assets/screenshots/video.mp4" width="100%" autoplay muted loop playsinline>
-  </video>
-</p>
+<img src="assets/screenshots/img.png" width="1000" alt="img">
 
 ## 💭 Por que uma Bio?
 
@@ -95,7 +91,6 @@ Design totalmente responsivo para dispositivos móveis:
   <img src="assets/screenshots/img_phone2.png" width="200">
 </p>
 
----
 
 ## 🛠️ Tecnologias
 
@@ -112,7 +107,6 @@ Decidi fazer algo mais simples, para fins de estudo em JS com foco em:
 - Como estruturar código limpo e manutenível
 - Como resolver problemas sem depender de bibliotecas
 
----
 
 ## 📁 Estrutura
 
@@ -134,7 +128,6 @@ MyBio/
 └── README.md          # Você está aqui!
 ```
 
----
 
 ## 🚀 Como executar o projeto
 
@@ -143,7 +136,6 @@ MyBio/
 
 > *(Dica: Use a extensão Live Server no VS Code para uma melhor experiência)*
 
----
 
 ## 🎯 Próximos Passos
 
@@ -152,13 +144,11 @@ MyBio/
 - [ ] Integração com GitHub API para mostrar repos automaticamente
 - [ ] Escalar para uma landing page com frameworks modernos (React por exemplo)
 
----
 
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
----
 
 ## 👨‍💻 Autor
 
