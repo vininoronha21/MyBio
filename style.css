@@ -8,16 +8,16 @@
 /* ==================== VARIABLES ==================== */
 :root {
   --primary: #f7e9b2;
-  --secondary: #fed74a;
+  --secondary: #f4a928;
   --tertiary: #6fc1f3;
-  --accent: #6fc253;
+  --accent: #69985a;
   --dark: #000000;
 }
 
 /* ==================== GENERAL ==================== */
 body {
   font-family: 'JetBrains Mono', monospace;
-  background-color: #caebec;
+  background-color: #e9eaea;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231589ff' fill-opacity='0.35'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 120px 120px;
@@ -147,9 +147,9 @@ body {
 
 .coffee {
   bottom: 4em;
-  right: 2.5em;
+  right: 3em;
   width: 2.5em;
-  animation-delay: 2.4s;
+  animation-delay: 2s;
 }
 
 /* ==================== NAME SECTION ==================== */
@@ -206,12 +206,10 @@ body {
   color: var(--dark);
   box-shadow: -3px 3px 0 var(--dark);
   transition: all 0.3s ease;
-  filter: drop-shadow(-3px 3px 0 var(--dark));
 }
 
 .skill-pill:hover {
   box-shadow: -1px 1px 0 var(--dark);
-  filter: drop-shadow(-1px 1px 0 var(--dark));
   transform: translate(-2px, 2px);
 }
 
@@ -228,7 +226,6 @@ body {
 }
 
 .about-box:hover {
-  filter: drop-shadow(-2px 2px 0 var(--dark));
   transform: translate(-4px, 4px);
 }
 
@@ -288,12 +285,10 @@ body {
   gap: 0.55em;
   transition: all 0.4s ease;
   position: relative;
-  filter: drop-shadow(-8px 8px 0 var(--dark));
 }
 
 .project-card:hover {
   box-shadow: -3px 3px 0 -3px var(--dark);
-  filter: drop-shadow(-3px 3px 0 var(--dark));
   transform: translate(-5px, 5px);
 }
 
@@ -391,12 +386,10 @@ body {
   margin: 2.2em auto;
   max-width: 19.8em;
   transition: all 0.4s ease;
-  filter: drop-shadow(-9px 9px 0 var(--dark));
 }
 
 .social-container:hover {
   box-shadow: -3px 3px 0 -3px var(--dark);
-  filter: drop-shadow(-3px 3px 0 var(--dark));
   transform: translate(-6px, 6px);  
 }
 
@@ -412,12 +405,10 @@ body {
   box-shadow: -4px 4px 0 -2px var(--dark);
   transition: all 0.3s ease;
   padding: 0.44em;
-  filter: drop-shadow(-4px 4px 0 var(--dark));
 }
 
 .social-btn:hover {
   box-shadow: -1px 1px 0 -2px var(--dark);
-  filter: drop-shadow(-1px 1px 0 var(--dark));
   transform: translate(-3px, 3px);
   background-color: var(--tertiary);
 }
@@ -447,7 +438,6 @@ body {
 }
 
 .contact-box:hover {
-  filter: drop-shadow(-2px 2px 0 var(--dark));
   transform: translate(-3px, 3px);
 }
 
@@ -613,6 +603,57 @@ padding: 2em;
   }
 }
 
+/* ==================== FIX MOBILE ==================== */
+@media (hover: none) and (pointer: coarse) {
+.profile-box:hover,
+.info-box:hover,
+.skill-pill:hover,
+.about-box:hover,
+.project-card:hover,
+.social-container:hover,
+.social-btn:hover,
+.contact-box:hover {
+  box-shadow: inherit; /* Mantém sombra original */
+  transform: none; /* Remove movimento */
+}
+  
+.project-card:active {
+box-shadow: -3px 3px 0 -3px var(--dark);
+transform: translate(-5px, 5px);
+}
+  
+.social-btn:active {
+  box-shadow: -1px 1px 0 -2px var(--dark);
+  transform: translate(-3px, 3px);
+  background-color: var(--tertiary);
+  }
+}
+
+/* ==================== OPTIMIZATION ==================== */
+.profile-box,
+.info-box,
+.skill-pill,
+.about-box,
+.project-card,
+.social-container,
+.social-btn,
+.contact-box {
+  will-change: transform; /* Prepara GPU para animações */
+  backface-visibility: hidden; /* Evita flickering */
+  -webkit-backface-visibility: hidden;
+}
+
+.profile-box:not(:hover),
+.info-box:not(:hover),
+.skill-pill:not(:hover),
+.about-box:not(:hover),
+.project-card:not(:hover),
+.social-container:not(:hover),
+.social-btn:not(:hover),
+.contact-box:not(:hover) {
+  will-change: auto;
+}
+
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 480px) {
   .projects-grid {
@@ -628,8 +669,8 @@ padding: 2em;
 
 .custom-cursor {
   position: fixed;
-  width: 30px;
-  height: 30px;
+  width: 27px;
+  height: 27px;
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.15s ease-out, opacity 0.2s ease;
