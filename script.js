@@ -266,8 +266,8 @@ if (window.matchMedia("(pointer: fine)").matches) {
   function animate() {
     const dx = mouseX - cursorX;
     const dy = mouseY - cursorY;
-    cursorX += dx * 0.5;
-    cursorY += dy * 0.5;
+    cursorX += dx * 0.15;
+    cursorY += dy * 0.15;
     cursor.style.left = cursorX + 'px';
     cursor.style.top = cursorY + 'px';
     requestAnimationFrame(animate);
